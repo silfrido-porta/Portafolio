@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/tailwind": "^5.1.1",
+    "@fontsource-variable/crimson-pro": "^5.1.0",
+    "@fontsource/poppins": "^5.1.0",
     "astro": "^4.15.8"
   }
 }

@@ -1,0 +1,43 @@
+<section class="seccion-sombremi">
+  <h2 class="title-sombremi">Sobre mí</h2>
+  <article class="card-sombremi">
+    <p class="text-card-sombremi">Me llamo Silfrido Benítez y actualmente trabajo como diseñador Web en Porta Agencia Web. Tengo más de 4 años de experiencia en el diseño, desarrollo y mantenimiento de interfaces web. Tengo sólidos conocimientos en HTML semántico, CSS y optimización para mejorar el rendimiento, así como experiencia con una variedad de frameworks y bibliotecas frontend.</p>
+    <p class="text-card-sombremi">Como diseñador, he trabajado con diversas marcas de distintos sectores, lo que me ha permitido experimentar con tendencias o adoptar un enfoque más serio según los requerimientos de cada marca.</p>
+  </article>
+</section>
+
+<style>
+  .seccion-sombremi{
+    max-width: 90%;
+		width: 100%;
+		margin: 0 auto;
+    padding: 6rem 1.5rem;
+    border-left: 1px solid var(--secundario);
+    border-bottom: 1px solid var(--secundario);
+    border-right: 1px solid var(--secundario);
+  }
+  .title-sombremi{
+    font-size: var(--font-hero);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--principal);
+    margin-bottom: 3.5rem;
+  }
+  /* Card */
+  .text-card-sombremi{
+    font-size: 1rem;
+    color: var(--principal);
+    line-height: 24px;
+    letter-spacing: 0.02rem;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    max-width: 764px;
+    text-wrap: pretty;
+  }
+  @media screen and (max-width:1100px) {
+    .seccion-sombremi{
+      max-width: calc(100% - 30px);
+    }
+  }
+</style>

@@ -1,50 +1,132 @@
 ---
+// Supports weights 200-900
+import '@fontsource-variable/crimson-pro';
+
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+
+import Header from "../components/layouts/Header.astro"
+import Footer from "../components/layouts/Footer.astro"
+
+
 interface Props {
-	title: string;
+	title: string
+	description: string
 }
 
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="es" class="sr">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
+		<meta name="description" content={description} />
+		<meta name="author" content="Silfrido Benítez">
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="/public/favicon/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="/public/favicon/favicon-16x16.png">
+		<link rel="manifest" href="/public/favicon/site.webmanifest">
+		<meta name="msapplication-TileColor" content="#da532c">
+		<meta name="theme-color" content="#ffffff">
+		
 		<meta name="generator" content={Astro.generator} />
+
+		<meta property="og:url" content="" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="/seo.jpg" />
+	
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:url" content="" />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="/seo.jpg" />
+
 		<title>{title}</title>
 	</head>
 	<body>
+		<Header />
+		
 		<slot />
+		
+		<Footer />
 	</body>
 </html>
+
 <style is:global>
 	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
+		/* --accent: 136, 58, 234;  */
+		--principal: #FEFFC5;
+		--principal-hover: #4C4C3F;
+		--white: #ffffff;
+		--black: #0E0E0E;
+		--secundario: #CBCC9E; 
+
+		--font-principal: 'Crimson Pro', serif;
+		--font-hero: 4rem;
+		--font-text: 1rem;
+		--font-seccion: 2.4rem;
+		--border-radius: 1rem;
 	}
+	*, *:after, *:before{
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+		scroll-behavior: smooth;
+	} 
 	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
+		font-family: 'Poppins', sans-serif;
+		min-height: 100vh;
+		background-color: var(--black);
+		font-size: 17px;
 	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
+	.container{
+    max-width: calc(100% - 240px);
+		width: 100%;
+		margin: 0 auto;
+		padding: 0 1rem;
+  }
+	.btn{
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: fit-content;
+		padding: .75rem 1.5rem;
+		border-radius: 30px;
+		text-decoration: none;
+		transition: all .3s;
+	}
+	.btn-primary{
+		border: 1px solid transparent;
+		background: var(--principal);
+		color: var(--black);
+	}
+	.btn-primary:hover{
+		border: 1px solid var(--principal);
+		background: var(--principal-hover);
+		color: var(--white);
+	}
+	.btn-outline{
+		border: 1px solid var(--principal);
+		color: var(--principal);
+	}
+	.btn-outline:hover{
+		background: var(--principal-hover);
+		color: var(--white);
+	}
+	@media screen and (max-width:1300px) {
+		:root{
+			--font-hero: 3rem;
+			--font-seccion: 1.6rem;
+		}
+	}
+	@media screen and (max-width:768px) {
+		:root{
+			--font-seccion: 1.7rem;
+		}
 	}
 </style>

@@ -1,0 +1,72 @@
+<footer class="footer">
+  <ul class="list-footer">
+    <li><a href="#" target="_blank">Instagram</a></li>
+    <li><a href="#" target="_blank">Dribbble</a></li>
+    <li><a href="#" target="_blank">Linkedin</a></li>
+  </ul>
+  <button class="btn-up">
+    <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 17"><path d="M13.567 8.995a.624.624 0 1 1-.884.885L8.125 5.32v10.367a.625.625 0 1 1-1.25 0V5.32L2.317 9.88a.624.624 0 1 1-.884-.885L7.058 3.37a.625.625 0 0 1 .884 0l5.625 5.625Zm.808-8.307H.625a.625.625 0 0 0 0 1.25h13.75a.625.625 0 1 0 0-1.25Z" fill="#FEFFC5"/></svg>
+    Volver arriba
+  </button>  
+</footer>
+<style>
+  .footer{
+    max-width: 90%;
+		width: 100%;
+		margin: 0 auto;
+    padding: 1.5rem;
+    border-left: 1px solid var(--secundario);
+    border-right: 1px solid var(--secundario);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .list-footer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+  .list-footer li{
+    font-size: 1rem;
+    color: var(--principal);
+    line-height: 24px;
+    letter-spacing: 0.02rem;
+    margin-top: 0;
+  }
+  .list-footer li a{
+    color: var(--principal);
+    text-decoration: none;
+  }
+  .btn-up{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .5rem;
+    width: fit-content;
+    text-decoration: none;
+    transition: all .3s;
+    font-size: 1rem;
+    background: transparent;
+    color: var(--principal);
+    border: 0;
+    line-height: 24px;
+    letter-spacing: 0.02rem;
+    margin-top: 0;
+  }
+  .btn-up:hover{
+    background: var(--principal-hover);
+    color: var(--white);
+  }
+  .btn-up svg{
+    width: 16px;
+    height: 16px;
+  }
+  @media screen and (max-width:1100px) {
+    .footer{
+      max-width: calc(100% - 30px);
+    }
+  }
+</style>

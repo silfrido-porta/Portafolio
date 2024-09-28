@@ -1,0 +1,90 @@
+<section class="seccion-hero">
+  <div class="grid-hero">
+    <div class="item-hero">
+      <h1 class="title-hero">Diseño interfaces intuitivas, eficientes y versátiles.</h1>
+      <p class="text-hero">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
+      <ul class="list-hero">
+        <li>
+          <a href="#contacto" class="btn btn-primary">
+            ¿Hablamos?
+          </a>
+        </li>
+        <li>
+          <a href="#" target="_blank" class="btn btn-outline">
+            Leer mi CV
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div class="item-hero">
+      <picture>
+        <source srcset="/hero.jpg" media="(max-width: 768px)" />
+        <img src="/hero.jpg" alt="Imagen de Servidores" class="img-hero" />
+      </picture>
+    </div>
+  </div>
+
+</section>
+
+
+<style>
+  .seccion-hero{
+    max-width: 90%;
+		width: 100%;
+		margin: 0 auto;
+    padding: 6rem 1.5rem;
+    border-left: 1px solid var(--secundario);
+    border-bottom: 1px solid var(--secundario);
+    border-right: 1px solid var(--secundario);
+  }
+  .grid-hero{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .img-hero{
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  .title-hero{
+    font-size: var(--font-hero);
+    font-family: var(--font-principal);
+    font-weight: 400;
+    letter-spacing: 0.02rem;
+    line-height: 1;
+    color: var(--principal);
+    margin-bottom: 1.25rem;
+  }
+  .text-hero{
+    font-size: var(--font-text);
+    color: var(--principal);
+    letter-spacing: 0.02rem;
+    line-height: 24px;
+    width: 80%;
+    text-wrap: pretty;
+    margin-bottom: 2rem;
+  }
+  .list-hero{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+  }
+
+  @media screen and (max-width:1100px) {
+    .seccion-hero{
+      max-width: calc(100% - 30px);
+    }
+    .grid-hero{
+      grid-template-columns: 1fr;
+      row-gap: 3rem;
+    }
+  }
+
+</style>

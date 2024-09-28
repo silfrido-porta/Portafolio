@@ -1,0 +1,140 @@
+---
+
+const PROJECTS = [
+  {
+    title: "La Química Farmacéutica",
+    description:
+      "Catálogo digital diseñado y desarrollado para resaltar las marcas representadas, los productos y las tiendas en donde se encuentran. El proyecto fue desarrollado con  Laravel y se uso Bootstrap para las grillas.",
+    link: "#",
+    image: "/public/p-1.png",
+  },
+  {
+    title: "Columbia",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "#",
+    image: "/public/p-1.png",
+  },
+  {
+    title: "Cines Multiplaza",
+    description:
+      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+    link: "#",
+    image: "/public/p-1.png",
+  },
+]
+---
+
+<section class="seccion-trabajos">
+  <h2 class="title-trabajos">Trabajos</h2>
+  <p class="subtitle-trabajos">Esta es una selección de algunos trabajos que he hecho durante los últimos años. Si quieres verlos con más detalle, <a href="#">escribime</a>.</p>
+  
+  {
+    PROJECTS.map(({ image, title, description, link }) => ( 
+      <article class="card-trabajo">
+        <div class="item-card-trabajo">
+          <p class="date-card-trabajos">Agencia Web Porta - 2022</p>
+          <h3 class="title-card-trabajos">{title}</h3>
+          <p class="text-card-trabajos">{description}</p>
+            
+          <a href={link} class="btn btn-primary">Ver proyecto</a>
+        </div>
+        <div class="item-card-trabajo">
+          <img loading="lazy" src={image} alt="Imagen de proyecto de LQF" class="img-trabajos">
+        </div>
+      </article>
+    ))
+  }
+</section>
+
+<style>
+  .seccion-trabajos{
+    max-width: 90%;
+		width: 100%;
+		margin: 0 auto;
+    padding: 6rem 1.5rem;
+    border-left: 1px solid var(--secundario);
+    border-bottom: 1px solid var(--secundario);
+    border-right: 1px solid var(--secundario);
+  }
+  .title-trabajos{
+    font-size: var(--font-hero);
+    font-family: 'Crimson Pro', serif;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--principal);
+    margin-bottom: 1.25rem;
+  }
+  .subtitle-trabajos{
+    font-size: 1rem;
+    color: var(--principal);
+    line-height: 24px;
+    letter-spacing: 0.02rem;
+    margin-top: 0;
+    width: 50%;
+    text-wrap: pretty;
+    margin-bottom: 2.5rem;
+  }
+  .subtitle-trabajos a{
+    color: var(--principal);
+  }
+  /* Card */
+  .card-trabajo{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 2rem;
+    padding-right: 0;
+    margin-bottom: 1.5rem; 
+    border-radius: var(--border-radius);
+    border: 1px solid var(--secundario);
+    background: #1A1A18;
+  }
+  .date-card-trabajos{
+    font-size: .875rem;
+    color: var(--principal);
+    margin-bottom: 1rem;
+  }
+  .title-card-trabajos {
+    font-size: 2rem;
+    font-family: 'Crimson Pro', serif;
+    font-weight: 400;
+    line-height: 1;
+    color: var(--principal);
+    text-align: underline;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    margin-bottom: 1.5rem;
+  }
+  .text-card-trabajos{
+    font-size: 1rem;
+    color: var(--principal);
+    line-height: 24px;
+    letter-spacing: 0.02rem;
+    width: 80%;
+    margin-top: 0;
+    margin-bottom: 2rem;
+    text-wrap: pretty;
+  }
+  .img-trabajos{
+    width: 500px;
+    height: auto;
+    object-fit: contain;
+  }
+  @media screen and (max-width:1100px) {
+    .seccion-trabajos{
+      max-width: calc(100% - 30px);
+    }
+    .card-trabajo{
+      flex-direction: column;
+      gap: 3rem;
+    }
+    .item-card-trabajo{
+      width: 100%;
+    }
+  }
+</style>
