@@ -31,10 +31,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid var(--secundario);
-    border-left: 1px solid var(--secundario);
-    border-bottom: 1px solid var(--secundario);
-    border-right: 1px solid var(--secundario);
+    border-top: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
   }
   .nav{
     width: 100%;
@@ -51,6 +51,7 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
+    list-style: none;
     margin-bottom: 0;
     padding-left: 0;
   }
@@ -58,7 +59,24 @@
     font-size: 1rem;
     color: var(--principal);
     text-decoration: none;
+    position: relative;
   }
+  .nav-link::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 0;
+    height: 1px;
+    background: var(--secundario);
+    transition: all .3s;
+  }
+  .nav-link:hover::after{
+    width: 100%;
+    transition: all .3s;
+  }
+
   .btn-menu{
     display: none;
     background: transparent;
