@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border-top: 1px solid var(--secundario);
     border-left: 1px solid var(--secundario);
     border-bottom: 1px solid var(--secundario);
     border-right: 1px solid var(--secundario);
@@ -75,6 +76,14 @@
     }
     .nav-list{
       display: none;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .header{
+      max-width: calc(100% - 2px);
+    }
+    .logo{
+      font-size: 1.2rem;
     }
   }
 </style>

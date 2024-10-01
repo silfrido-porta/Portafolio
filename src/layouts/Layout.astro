@@ -56,7 +56,12 @@ const { title, description } = Astro.props;
 		<Footer />
 	</body>
 </html>
-
+<script>
+  const buttonUp = document.querySelector(".btn-up");
+  buttonUp.onclick = function() {
+    window.scrollTo({top: 0, behavior: 'smooth'});
+  };
+</script>
 <style is:global>
 	:root {
 		/* --accent: 136, 58, 234;  */
@@ -83,6 +88,9 @@ const { title, description } = Astro.props;
 		min-height: 100vh;
 		background-color: var(--black);
 		font-size: 17px;
+	}
+	p{
+		line-height: 1.3;
 	}
 	.container{
     max-width: calc(100% - 240px);
@@ -126,7 +134,11 @@ const { title, description } = Astro.props;
 	}
 	@media screen and (max-width:768px) {
 		:root{
-			--font-seccion: 1.7rem;
+			--font-hero: 2.5rem;
+			--font-seccion: 2rem;
+		}
+		html{
+			font-size: 16px;
 		}
 	}
 </style>

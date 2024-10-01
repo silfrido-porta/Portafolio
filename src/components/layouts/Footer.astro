@@ -1,8 +1,8 @@
 <footer class="footer">
   <ul class="list-footer">
-    <li><a href="#" target="_blank">Instagram</a></li>
-    <li><a href="#" target="_blank">Dribbble</a></li>
-    <li><a href="#" target="_blank">Linkedin</a></li>
+    <li><a href="https://www.instagram.com/silfridobenitez/" target="_blank">Instagram</a></li>
+    <li><a href="https://dribbble.com/SilfridoB12" target="_blank">Dribbble</a></li>
+    <li><a href="https://www.linkedin.com/in/silfrido-benitez-91677130a/" target="_blank">Linkedin</a></li>
   </ul>
   <button class="btn-up">
     <svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 15 17"><path d="M13.567 8.995a.624.624 0 1 1-.884.885L8.125 5.32v10.367a.625.625 0 1 1-1.25 0V5.32L2.317 9.88a.624.624 0 1 1-.884-.885L7.058 3.37a.625.625 0 0 1 .884 0l5.625 5.625Zm.808-8.307H.625a.625.625 0 0 0 0 1.25h13.75a.625.625 0 1 0 0-1.25Z" fill="#FEFFC5"/></svg>
@@ -55,10 +55,11 @@
     line-height: 24px;
     letter-spacing: 0.02rem;
     margin-top: 0;
+    cursor: pointer;
   }
   .btn-up:hover{
-    background: var(--principal-hover);
-    color: var(--white);
+    border-bottom: 1px solid var(--principal);
+    color: var(--principal);
   }
   .btn-up svg{
     width: 16px;
@@ -67,6 +68,14 @@
   @media screen and (max-width:1100px) {
     .footer{
       max-width: calc(100% - 30px);
+    }
+  }
+  @media screen and (max-width:768px) {
+    .footer{
+      max-width: calc(100% - 2px);
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.4rem;
     }
   }
 </style>

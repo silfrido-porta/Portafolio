@@ -5,12 +5,12 @@
       <p class="text-hero">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
       <ul class="list-hero">
         <li>
-          <a href="#contacto" class="btn btn-primary">
+          <a href="mailto:silfridobenitez65@gmail.com" class="btn btn-primary">
             ¿Hablamos?
           </a>
         </li>
         <li>
-          <a href="#" target="_blank" class="btn btn-outline">
+          <a href="../document/Silfrido-Benitez-CV.pdf" target="_blank" class="btn btn-outline">
             Leer mi CV
           </a>
         </li>
@@ -18,8 +18,8 @@
     </div>
     <div class="item-hero">
       <picture>
-        <source srcset="/hero.jpg" media="(max-width: 768px)" />
-        <img src="/hero.jpg" alt="Imagen de Servidores" class="img-hero" />
+        <source srcset="/images/hero.jpg" media="(max-width: 768px)" />
+        <img src="/images/hero.jpg" alt="Imagen de Servidores" class="img-hero" />
       </picture>
     </div>
   </div>
@@ -84,6 +84,17 @@
     .grid-hero{
       grid-template-columns: 1fr;
       row-gap: 3rem;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .seccion-hero{
+      max-width: calc(100% - 2px);
+    }
+    .title-hero{
+      line-height: 1.3;
+    }
+    .text-hero{
+      width: 100%;
     }
   }
 

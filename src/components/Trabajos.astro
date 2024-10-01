@@ -2,25 +2,40 @@
 
 const PROJECTS = [
   {
+    empresa: "Agencia Web Porta - 2022",
     title: "La Química Farmacéutica",
     description:
       "Catálogo digital diseñado y desarrollado para resaltar las marcas representadas, los productos y las tiendas en donde se encuentran. El proyecto fue desarrollado con  Laravel y se uso Bootstrap para las grillas.",
-    link: "#",
-    image: "/p-1.png",
+    link: "https://www.lqf.com.py/",
+    imageOne: "/images/lqf-desk.png",
+    imageTwo: "/images/lqf-mobile.png",
   },
   {
-    title: "Columbia",
+    empresa: "Agencia Web Porta - 2023",
+    title: "Mecal Muebles",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "#",
-    image: "/p-1.png",
+      "Mecal Muebles es una tienda en línea que ofrece muebles de diseño moderno y funcional para diferentes espacios. El sitio destaca por su navegación intuitiva y diseño visual limpio, brindando una experiencia de usuario fluida y profesional.",
+    link: "https://www.mecalmuebles.com.py/",
+    imageOne: "/images/mecal.png",
+    imageTwo: "/images/mecal.png",
   },
   {
-    title: "Cines Multiplaza",
+    empresa: "Agencia Web Porta - 2023",
+    title: "Universidad Columbia",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
+      "Universidad Columbia proporciona información detallada sobre sus carreras, servicios estudiantiles, y actividades institucionales, con un diseño intuitivo y fácil de navegar. Además, permite acceder a servicios en línea como inscripciones, consultas y recursos académicos.",
+    link: "https://columbia.edu.py/",
+    imageOne: "../images/columbia-desk.png",
+    imageTwo: "../images/columbia-mobile.png",
+  },
+  {
+    empresa: "Proyecto Freelance - 2023",
+    title: "Puro Sol",
+    description:
+      "El objetivo fue diseñar una interfaz divertida y atractiva para niños, integrando juegos y premios. La web cumplía múltiples funciones, como el registro de cupones incluidos en los envases de jugos. Incorporaba un sistema de login/registro, perfil de usuario, una sección para ingresar códigos, y una vista de felicitaciones que mostraba los cupones acumulados.",
     link: "#",
-    image: "/p-1.png",
+    imageOne: "../images/puro-sol.png",
+    imageTwo: "../images/puro-sol.png",
   },
 ]
 ---
@@ -30,17 +45,20 @@ const PROJECTS = [
   <p class="subtitle-trabajos">Esta es una selección de algunos trabajos que he hecho durante los últimos años. Si quieres verlos con más detalle, <a href="#">escribime</a>.</p>
   
   {
-    PROJECTS.map(({ image, title, description, link }) => ( 
+    PROJECTS.map(({ imageOne, imageTwo, empresa, title, description, link }) => ( 
       <article class="card-trabajo">
         <div class="item-card-trabajo">
-          <p class="date-card-trabajos">Agencia Web Porta - 2022</p>
+          <p class="date-card-trabajos">{empresa}</p>
           <h3 class="title-card-trabajos">{title}</h3>
           <p class="text-card-trabajos">{description}</p>
             
-          <a href={link} class="btn btn-primary">Ver proyecto</a>
+          <a href={link} class="btn btn-primary" target="_blank">Ver proyecto</a>
         </div>
         <div class="item-card-trabajo">
-          <img loading="lazy" src={image} alt="Imagen de proyecto de LQF" class="img-trabajos">
+          <picture>
+            <source srcset={imageTwo} media="(max-width: 768px)" />
+            <img src={imageOne} alt={title} loading="lazy" class="img-trabajos"/>
+          </picture>
         </div>
       </article>
     ))
@@ -81,9 +99,11 @@ const PROJECTS = [
   /* Card */
   .card-trabajo{
     width: 100%;
-    display: flex;
+    height: 490px;
+    z-index: 999;
+    display: grid;
     align-items: center;
-    justify-content: space-between;
+    grid-template-columns: 1fr .5fr;
     gap: 1rem;
     padding: 2rem;
     padding-right: 0;
@@ -91,6 +111,16 @@ const PROJECTS = [
     border-radius: var(--border-radius);
     border: 1px solid var(--secundario);
     background: #1A1A18;
+    overflow: hidden;
+  }
+  .card-trabajo:nth-child(even){
+    padding-bottom: 0;
+  }
+  .item-card-trabajo{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
   .date-card-trabajos{
     font-size: .875rem;
@@ -121,8 +151,10 @@ const PROJECTS = [
     text-wrap: pretty;
   }
   .img-trabajos{
-    width: 500px;
+    display: block;
+    width: 458px;
     height: auto;
+    aspect-ratio: 1/1;
     object-fit: contain;
   }
   @media screen and (max-width:1100px) {
@@ -130,13 +162,31 @@ const PROJECTS = [
       max-width: calc(100% - 30px);
     }
     .card-trabajo{
-      flex-direction: column;
-      gap: 3rem;
+      height: unset;
+      grid-template-columns: 1fr;
+      gap: 2rem;
     }
     .item-card-trabajo{
       width: 100%;
     }
     .img-trabajos{
+      width: 100%;
+    }
+  }
+  @media screen and (max-width:768px) {
+    .seccion-trabajos{
+      max-width: calc(100% - 2px);
+    }
+    .subtitle-trabajos{
+      width: 100%;
+    }
+    .card-trabajo{
+      padding: 2rem 1rem;
+    }
+    .title-card-trabajos{
+      line-height: 1.3;
+    }
+    .text-card-trabajos{
       width: 100%;
     }
   }
