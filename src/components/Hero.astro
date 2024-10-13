@@ -1,27 +1,19 @@
 <section class="seccion-hero">
-  <div class="grid-hero">
-    <div class="item-hero">
-      <h1 class="title-hero">Diseño interfaces intuitivas, eficientes y versátiles.</h1>
-      <p class="text-hero">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
-      <ul class="list-hero">
-        <li>
-          <a href="mailto:silfridobenitez65@gmail.com" class="btn btn-primary">
-            ¿Hablamos?
-          </a>
-        </li>
-        <li>
-          <a href="../document/Silfrido-Benitez-CV.pdf" target="_blank" class="btn btn-outline">
-            Leer mi CV
-          </a>
-        </li>
-      </ul>
-    </div>
-    <div class="item-hero">
-      <picture>
-        <source srcset="/images/hero.jpg" media="(max-width: 768px)" />
-        <img src="/images/hero.jpg" alt="Imagen de Servidores" class="img-hero" />
-      </picture>
-    </div>
+  <div class="wrapper-hero">
+    <h1 class="title-hero">Diseño interfaces intuitivas, eficientes y versátiles.</h1>
+    <p class="text-hero">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
+    <ul class="list-hero">
+      <li>
+        <a href="mailto:silfridobenitez65@gmail.com" class="btn btn-primary">
+          ¿Hablamos?
+        </a>
+      </li>
+      <li>
+        <a href="../document/Silfrido-Benitez-CV.pdf" target="_blank" class="btn btn-outline">
+          Leer mi CV
+        </a>
+      </li>
+    </ul>
   </div>
 
 </section>
@@ -29,33 +21,30 @@
 
 <style>
   .seccion-hero{
-    max-width: 90%;
+    background-color: var(--fondo);
+    background-image: url(../../public/images/grid.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 12rem;
+    padding-bottom: 10rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .wrapper-hero{
+    max-width: 836px;
 		width: 100%;
 		margin: 0 auto;
-    padding: 6rem 1.5rem;
-    border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
-  .grid-hero{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
     align-items: center;
-    gap: 1.5rem;
-  }
-  .img-hero{
-    width: 100%;
-    height: auto;
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    border-radius: 1rem;
+    flex-direction: column;
   }
   .title-hero{
     font-size: var(--font-hero);
-    font-family: var(--font-principal);
-    font-weight: 400;
+    font-weight: bold;
     letter-spacing: 0.02rem;
-    line-height: 1;
+    line-height: 1.3;
+    text-align: center;
     color: var(--principal);
     margin-bottom: 1.25rem;
   }
@@ -63,9 +52,12 @@
     font-size: var(--font-text);
     color: var(--principal);
     letter-spacing: 0.02rem;
-    line-height: 24px;
-    width: 80%;
+    line-height: 1.5;
     text-wrap: pretty;
+    text-align: center;
+    max-width: 770px;
+    margin-left: auto;
+    margin-right: auto;
     margin-bottom: 2rem;
   }
   .list-hero{
@@ -81,7 +73,7 @@
     .seccion-hero{
       max-width: calc(100% - 30px);
     }
-    .grid-hero{
+    .wrapper-hero{
       grid-template-columns: 1fr;
       row-gap: 3rem;
     }

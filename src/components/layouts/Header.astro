@@ -6,15 +6,13 @@
     <button class="btn-menu">Menú</button>
     <ul class="nav-list">
       <li class="nav-item">
+        <a href="/#sobre-mi" class="nav-link">Sobre mí</a>
       </li>
       <li class="nav-item">
         <a href="/#experiencia" class="nav-link">Experencia</a>
       </li>
       <li class="nav-item">
         <a href="/#servicios" class="nav-link">Proyectos</a>
-      </li>
-      <li class="nav-item">
-        <a href="/#sobre-mi" class="nav-link">Sobre mí</a>
       </li>
       <li class="nav-item">
         <a href="#" class="nav-link">Contacto</a>
@@ -24,20 +22,19 @@
 </header>
 <style>
   .header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .nav{
     max-width: 90%;
 		width: 100%;
 		margin: 0 auto;
     padding: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-top: 1px solid var(--border);
-    border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-  }
-  .nav{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -50,7 +47,7 @@
   .nav-list{
     display: flex;
     align-items: center;
-    gap: 1.5rem;
+    gap: 3rem;
     list-style: none;
     margin-bottom: 0;
     padding-left: 0;
@@ -60,6 +57,21 @@
     color: var(--principal);
     text-decoration: none;
     position: relative;
+  }
+  .nav-link::before{
+    content: '';
+    position: absolute;
+    right: -1.65rem;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--principal);
+    transition: all .3s;
+  }
+  .nav-list li:last-child .nav-link::before{
+    display: none;
   }
   .nav-link::after{
     content: '';

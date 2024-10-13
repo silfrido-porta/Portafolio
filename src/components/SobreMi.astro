@@ -1,9 +1,18 @@
 <section class="seccion-sombremi">
-  <h2 class="title-sombremi">Sobre mí</h2>
-  <article class="card-sombremi">
-    <p class="text-card-sombremi">Me llamo Silfrido Benítez y actualmente trabajo como diseñador Web en Porta Agencia Web. Tengo más de 4 años de experiencia en el diseño, desarrollo y mantenimiento de interfaces web. Tengo sólidos conocimientos en HTML semántico, CSS y optimización para mejorar el rendimiento, así como experiencia con una variedad de frameworks y bibliotecas frontend.</p>
-    <p class="text-card-sombremi">Como diseñador, he trabajado con diversas marcas de distintos sectores, lo que me ha permitido experimentar con tendencias o adoptar un enfoque más serio según los requerimientos de cada marca.</p>
-  </article>
+  <div class="grid-sobremi">
+    <div class="item-sobremi">
+      <div class="wrapper-img-sobremi">
+        <img src="/images/hero-2.jpg" alt="Imagen de perfil" class="img-sombremi">
+      </div>
+    </div>
+    <div class="item-sobremi">
+      <div class="wrapper-text-sobremi">
+        <h2 class="title-sombremi">Sobre mí</h2>
+        <p class="text-card-sombremi">Me llamo Silfrido Benítez y actualmente trabajo como diseñador Web en Porta Agencia Web. Tengo más de 4 años de experiencia en el diseño, desarrollo y mantenimiento de interfaces web. Tengo sólidos conocimientos en HTML semántico, CSS y optimización para mejorar el rendimiento, así como experiencia con una variedad de frameworks y bibliotecas frontend.</p>
+        <p class="text-card-sombremi">Como diseñador, he trabajado con diversas marcas de distintos sectores, lo que me ha permitido experimentar con tendencias o adoptar un enfoque más serio según los requerimientos de cada marca.</p>
+      </div>
+    </div>
+  </div>
 </section>
 
 <style>
@@ -12,26 +21,51 @@
 		width: 100%;
 		margin: 0 auto;
     padding: 6rem 1.5rem;
-    border-left: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
+  }
+  .grid-sobremi{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 1rem;
+    border-radius: 1rem;
+    background: url(../../public/images/grid.svg), linear-gradient(107.61deg, #272648 20.76%, #5450AF 99.49%);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .wrapper-img-sobremi{
+    width: 100%;
+    height: 600px;
+  }
+  .img-sombremi{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1rem;
+  }
+  .wrapper-text-sobremi{
+    padding-left: 4rem;
+    padding-right: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
   }
   .title-sombremi{
-    font-size: var(--font-hero);
-    font-family: 'Crimson Pro', serif;
-    font-weight: 400;
+    font-size: 2.5rem;
+    font-weight: 600;
     line-height: 1;
     color: var(--principal);
-    margin-bottom: 3.5rem;
+    margin-bottom: 2.5rem;
   }
   /* Card */
   .text-card-sombremi{
     font-size: 1rem;
     color: var(--principal);
-    line-height: 24px;
+    line-height: 1.5;
     letter-spacing: 0.02rem;
     margin-top: 0;
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
     max-width: 764px;
     text-wrap: pretty;
   }
