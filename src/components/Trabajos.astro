@@ -72,7 +72,7 @@ const PROJECTS = [
   .seccion-trabajos{
     padding: 6rem 1.5rem;
     background: #3F4273;
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
   }
   .wrapper-trabajos{
     max-width: 90%;
@@ -94,7 +94,7 @@ const PROJECTS = [
     opacity: .8;
   }
   .title-trabajos{
-    font-size: 2.5rem;
+    font-size: var(--font-seccion);
     font-weight: 600;
     line-height: 1;
     color: var(--principal);
@@ -116,7 +116,7 @@ const PROJECTS = [
   /* Card */
   .grid-trabajos{
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(min(500px, 100%), 1fr));
     gap: 2rem;
   }
   .card-trabajo{
@@ -158,39 +158,28 @@ const PROJECTS = [
     width: 100%;
     height: auto;
     object-fit: contain;
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
   }
-  @media screen and (max-width:1100px) {
-    .seccion-trabajos{
-      max-width: calc(100% - 30px);
-    }
-    .card-trabajo{
-      height: unset;
-      grid-template-columns: 1fr;
-      gap: 2rem;
-    }
-    .item-card-trabajo{
-      width: 100%;
-    }
-    .img-trabajos{
-      width: 100%;
-    }
-  }
+
   @media screen and (max-width:768px) {
-    .seccion-trabajos{
-      max-width: calc(100% - 2px);
+    .wrapper-trabajos{
+      max-width: 100%;
     }
     .subtitle-trabajos{
       width: 100%;
     }
     .card-trabajo{
-      padding: 2rem 1rem;
+      padding: 2rem;
     }
     .title-card-trabajos{
       line-height: 1.3;
     }
     .text-card-trabajos{
       width: 100%;
+    }
+    .wrapper-trabajos::after{
+      width: 80px;
+      height: 80px;
     }
   }
 </style>

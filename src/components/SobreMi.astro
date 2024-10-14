@@ -24,10 +24,10 @@
   }
   .grid-sobremi{
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fill, minmax(min(500px, 100%), 1fr));
     align-items: center;
-    gap: 1rem;
-    border-radius: 1rem;
+    gap: 2rem;
+    border-radius: var(--border-radius);
     background: url(../../public/images/grid.svg), linear-gradient(107.61deg, #272648 20.76%, #5450AF 99.49%);
     background-position: center center;
     background-repeat: no-repeat;
@@ -41,7 +41,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 1rem;
+    border-radius: var(--border-radius);
   }
   .wrapper-text-sobremi{
     padding-left: 4rem;
@@ -52,7 +52,7 @@
     justify-content: center;
   }
   .title-sombremi{
-    font-size: 2.5rem;
+    font-size: var(--font-seccion);
     font-weight: 600;
     line-height: 1;
     color: var(--principal);
@@ -69,14 +69,14 @@
     max-width: 764px;
     text-wrap: pretty;
   }
-  @media screen and (max-width:1100px) {
-    .seccion-sombremi{
-      max-width: calc(100% - 30px);
-    }
-  }
+
   @media screen and (max-width:768px) {
     .seccion-sombremi{
       max-width: calc(100% - 2px);
+    }
+    .wrapper-text-sobremi{
+      padding-left: 2rem;
+      padding-right: 2rem;
     }
   }
 </style>
