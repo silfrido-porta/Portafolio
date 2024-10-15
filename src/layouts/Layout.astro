@@ -1,13 +1,11 @@
 ---
 // Supports weights 200-900
-import '@fontsource-variable/crimson-pro';
 
 import '@fontsource/poppins/400.css';
 import '@fontsource/poppins/500.css';
 
 import Header from "../components/layouts/Header.astro"
 import Footer from "../components/layouts/Footer.astro"
-
 
 interface Props {
 	title: string
@@ -45,6 +43,8 @@ const { title, description } = Astro.props;
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content="/images/seo.jpg" />
 
+		<link rel="canonical" href="https://silfrido-benitez.vercel.app/">
+
 		<title>{title}</title>
 	</head>
 	<body>
@@ -55,28 +55,7 @@ const { title, description } = Astro.props;
 		<Footer />
 	</body>
 </html>
-<script>
-  // const buttonUp = document.querySelector(".btn-up");
-  // buttonUp.onclick = function() {
-  //   window.scrollTo({top: 0, behavior: 'smooth'});
-  // };
 
-  const btnMenu = document.querySelector(".btn-menu");
-  const menuBody = document.querySelector('.nav-list');
-
-    // Al hacer clic en el botón de menú
-  btnMenu.addEventListener('click', () => {
-    menuBody.classList.toggle('open');
-    btnMenu.classList.toggle('open');
-  });
-
-  document.querySelectorAll('.nav-list .nav-item a').forEach((item) => {
-    item.addEventListener('click', (event) => {
-      btnMenu.classList.remove('open');
-      menuBody.classList.remove('open');
-    });
-  });
-</script>
 <style is:global>
 	:root {
 		--principal: #FEFFC5;
@@ -159,3 +138,84 @@ const { title, description } = Astro.props;
 		}
 	}
 </style>
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+
+<script async src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.1.3/TweenMax.min.js"></script>
+
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function() {
+		// Menu Mobile
+		const btnMenu = document.querySelector(".btn-menu");
+		const menuBody = document.querySelector('.nav-list');
+	
+		// Al hacer clic en el botón de menú
+		btnMenu.addEventListener('click', () => {
+			menuBody.classList.toggle('open');
+			btnMenu.classList.toggle('open');
+		});
+	
+		document.querySelectorAll('.nav-list .nav-item a').forEach((item) => {
+			item.addEventListener('click', (event) => {
+				btnMenu.classList.remove('open');
+				menuBody.classList.remove('open');
+			});
+		});
+
+
+		/*** Sticky Cursor with Delay */
+		// CURSOR
+		let cursor = document.querySelector(".cursor"),
+				follower = document.querySelector(".cursor-follower");
+
+		let posX = 0,
+				posY = 0;
+
+		let mouseX = 0,
+				mouseY = 0;
+
+		gsap.to({}, {
+			duration: 0.016,
+			repeat: -1,
+			onRepeat: function() {
+				posX += (mouseX - posX) / 9;
+				posY += (mouseY - posY) / 9;
+
+				gsap.set(follower, {
+						css: {
+							left: posX - 30 + 'px',
+							top: posY - 30 + 'px'
+						}
+				});
+
+				TweenMax.set(cursor, {
+						css: {
+							left: mouseX + 'px',
+							top: mouseY + 'px'
+						}
+				});
+			}
+		});
+
+		document.querySelectorAll(".card-trabajo").forEach(function(container) {
+			container.addEventListener("mousemove", function(e) {
+				mouseX = e.clientX;
+				mouseY = e.clientY;
+			});
+
+			// yellow circle
+			container.addEventListener("mouseenter", function() {
+				cursor.classList.add("active");
+				follower.classList.add("active");
+			});
+
+			container.addEventListener("mouseleave", function() {
+				cursor.classList.remove("active");
+				follower.classList.remove("active");
+			});
+		});
+
+		/*** Fin Sticky Cursor with Delay */
+
+	});
+
+</script>
