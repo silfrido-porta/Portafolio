@@ -58,7 +58,7 @@ const TECNOLOGIAS = [
 <style>
   .seccion-hero{
     background-color: var(--fondo);
-    background-image: url(../../public/images/grid.svg);
+    background-image: url(/images/grid.svg);
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -176,6 +176,14 @@ const TECNOLOGIAS = [
       top: unset;
       bottom: -4rem;
       right: 1rem;
+    }
+  }
+  @media screen and (max-width:500px) {
+    .seccion-hero{
+      padding-bottom: 8rem;
+    }
+    .pill{
+      display: none;
     }
   }
 

@@ -3,7 +3,11 @@
     <a href="/" class="logo">
       Silfrido Benítez
     </a>
-    <button class="btn-menu">Menú</button>
+    <button class="btn-menu">
+      <span class="linea-1"></span>
+      <span class="linea-2"></span>
+      <span class="linea-3"></span>
+    </button>
     <ul class="nav-list">
       <li class="nav-item">
         <a href="/#sobre-mi" class="nav-link">Sobre mí</a>
@@ -12,10 +16,10 @@
         <a href="/#experiencia" class="nav-link">Experencia</a>
       </li>
       <li class="nav-item">
-        <a href="/#servicios" class="nav-link">Proyectos</a>
+        <a href="/#proyectos" class="nav-link">Proyectos</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Contacto</a>
+        <a href="/#contacto" class="nav-link">Contacto</a>
       </li>
     </ul>
   </nav>
@@ -23,19 +27,26 @@
 <style>
   .header{
     position: fixed;
-    top: 0;
-    left: 0;
+    top: 1rem;
     right: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    border: .001rem solid rgba(255, 255, 255, .1);
+    background: rgb(85 81 177 / 80%);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+    border-radius: 1rem;
+    max-width: calc(90% - 3rem);
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
     z-index: 9;
   }
   .nav{
-    max-width: 90%;
 		width: 100%;
 		margin: 0 auto;
-    padding: 1.5rem;
+    padding: 1rem 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -91,11 +102,53 @@
   }
 
   .btn-menu{
+    width: 24px;
+    height: 16px;
     display: none;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    margin-left: auto;
     background: transparent;
-    border: none;
-    font-size: 1rem;
-    color: var(--principal);
+    position: relative;
+    outline: 0;
+    border: 0;
+    cursor: pointer;
+    transition: transform .5s ease, opacity .3s ease;
+    transform: translateY(0) rotate(0);
+    will-change: transform;
+  }
+  .btn-menu span {
+    position: absolute;
+    left: 50%;
+    width: 100%;
+    height: 1px;
+    background: #ffffffe6;
+    transition: transform .5s, opacity .25s;
+    transform: translate(-50%, -50%);
+    will-change: normal;
+  }
+  .linea-1 {
+    top: 10%;
+  }
+  .linea-2 {
+    top: 50%;
+  }
+  .linea-3 {
+    top: 90%;
+  }
+  .btn-menu.open .linea-1 {
+    top: 50%;
+    transform: translate(-50%) rotate(-45deg);
+  }
+  .btn-menu.open .linea-2 {
+    top: 50%;
+    opacity: 0;
+    transform: translate(-50%);
+  }
+  .btn-menu.open .linea-3 {
+    top: 50%;
+    transform: translate(-50%) rotate(45deg);
   }
   @media screen and (max-width:1100px) {
     .header{
@@ -103,14 +156,6 @@
       width: 100%;
       margin-left: auto;
       margin-right: auto;
-      top: 1rem;
-      left: 50%;
-      transform: translateX(-50%);
-      border: .001rem solid rgba(255, 255, 255, .1);
-      background: rgb(85 81 177 / 80%);
-      -webkit-backdrop-filter: blur(20px);
-      backdrop-filter: blur(20px);
-      border-radius: 1rem;
     }
     .btn-menu{
       margin-left: auto;

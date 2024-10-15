@@ -40,7 +40,7 @@ const PROJECTS = [
 ]
 ---
 
-<section class="seccion-trabajos">
+<section class="seccion-trabajos" id="proyectos">
   <div class="wrapper-trabajos">
     <h2 class="title-trabajos">Proyectos</h2>
     <p class="subtitle-trabajos">Esta es una selección de algunos trabajos que he hecho durante los últimos años. Si quieres verlos con más detalle, <a href="#">escribíme</a>.</p>
@@ -70,23 +70,23 @@ const PROJECTS = [
 
 <style>
   .seccion-trabajos{
-    padding: 6rem 1.5rem;
     background: #3F4273;
     border-radius: var(--border-radius);
   }
   .wrapper-trabajos{
     max-width: 90%;
 		width: 100%;
+    padding: 6rem 1.5rem;
 		margin: 0 auto;
     position: relative;
   }
   .wrapper-trabajos::after{
     content: '';
     position: absolute;
-    top: -2rem;
+    top: 4rem;
     right: -1rem;
-    width: 120px;
-    height: 120px;
+    width: 100px;
+    height: 100px;
     background: url(../../public/images/formas-right-2.svg);
     background-position: center;
     background-repeat: no-repeat;
@@ -133,7 +133,7 @@ const PROJECTS = [
     margin-bottom: 1rem;
   }
   .title-card-trabajos {
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 500;
     line-height: 1;
     color: var(--principal);
@@ -162,28 +162,32 @@ const PROJECTS = [
   }
 
   @media screen and (max-width:768px) {
-    .seccion-trabajos{
-      padding-left: 1rem;
-      padding-right: 1rem;
-    }
     .wrapper-trabajos{
       max-width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     .subtitle-trabajos{
       width: 100%;
     }
     .card-trabajo{
-      padding: 2rem;
+      padding: 1rem;
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 2rem;
     }
     .title-card-trabajos{
+      font-size: 1.25rem;
       line-height: 1.3;
+      margin-bottom: 1rem;
     }
     .text-card-trabajos{
       width: 100%;
+      display: none;
     }
     .wrapper-trabajos::after{
-      width: 80px;
-      height: 80px;
+      width: 60px;
+      height: 60px;
       right: 0;
     }
   }
