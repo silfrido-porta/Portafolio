@@ -43,7 +43,7 @@ const PROJECTS = [
 <section class="seccion-trabajos">
   <div class="wrapper-trabajos">
     <h2 class="title-trabajos">Proyectos</h2>
-    <p class="subtitle-trabajos">Esta es una selección de algunos trabajos que he hecho durante los últimos años. Si quieres verlos con más detalle, <a href="#">escribime</a>.</p>
+    <p class="subtitle-trabajos">Esta es una selección de algunos trabajos que he hecho durante los últimos años. Si quieres verlos con más detalle, <a href="#">escribíme</a>.</p>
     
     <div class="grid-trabajos">
       {
@@ -162,6 +162,10 @@ const PROJECTS = [
   }
 
   @media screen and (max-width:768px) {
+    .seccion-trabajos{
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
     .wrapper-trabajos{
       max-width: 100%;
     }
@@ -180,6 +184,7 @@ const PROJECTS = [
     .wrapper-trabajos::after{
       width: 80px;
       height: 80px;
+      right: 0;
     }
   }
 </style>

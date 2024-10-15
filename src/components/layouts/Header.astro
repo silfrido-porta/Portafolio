@@ -100,19 +100,62 @@
   @media screen and (max-width:1100px) {
     .header{
       max-width: calc(100% - 30px);
+      width: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      top: 1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      border: .001rem solid rgba(255, 255, 255, .1);
+      background: rgb(85 81 177 / 80%);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+      border-radius: 1rem;
     }
     .btn-menu{
       margin-left: auto;
       display: block;
     }
+    .nav{
+      max-width: 100%;
+      padding: 1.2rem 1rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
     .nav-list{
+      width: 100%;
+      height: 0;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0;
+      grid-column-start: 1;
+      grid-column-end: 3;
+      overflow: hidden;
+      transition: all .3s;
+    }
+    .nav-list.open{
+      height: 248px;
+      padding-top: 2rem;
+      transition: all .3s;
+    }
+    .nav-item{
+      width: 100%;
+    }
+    .nav-link{
+      display: block;
+      font-size: .9rem;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
+      border-bottom: .001rem solid rgba(255, 255, 255, .1);
+    }
+    .nav-link::before{
       display: none;
+    }
+    .nav-item:last-child .nav-link{
+      border-bottom: 0;
     }
   }
   @media screen and (max-width:768px) {
-    .header{
-      max-width: calc(100% - 2px);
-    }
     .logo{
       font-size: 1.2rem;
     }

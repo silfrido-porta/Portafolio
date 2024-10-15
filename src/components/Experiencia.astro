@@ -110,8 +110,9 @@
 
   @media screen and (max-width:768px) {
     .seccion-experiencia{
-      padding-left: 0;
-      padding-right: 0;
+      max-width: 100%;
+      padding-left: 1rem;
+      padding-right: 1rem;
     }
     .head-card-experiencia,
     .body-card-experiencia{
@@ -136,10 +137,12 @@
     .seccion-experiencia::before{
       width: 80px;
       height: 80px;
+      right: 0;
     }
     .seccion-experiencia::after{
       width: 80px;
       height: 80px;
+      left: 0;
     }
   }
 </style>

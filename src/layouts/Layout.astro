@@ -56,14 +56,28 @@ const { title, description } = Astro.props;
 	</body>
 </html>
 <script>
-  const buttonUp = document.querySelector(".btn-up");
-  buttonUp.onclick = function() {
-    window.scrollTo({top: 0, behavior: 'smooth'});
-  };
+  // const buttonUp = document.querySelector(".btn-up");
+  // buttonUp.onclick = function() {
+  //   window.scrollTo({top: 0, behavior: 'smooth'});
+  // };
+
+  const btnMenu = document.querySelector(".btn-menu");
+  const menuBody = document.querySelector('.nav-list');
+
+    // Al hacer clic en el botón de menú
+  btnMenu.addEventListener('click', () => {
+    menuBody.classList.toggle('open');
+    btnMenu.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.nav-list li a').forEach((item) => {
+    item.addEventListener('click', (event) => {
+      btnMenu.classList.remove('open');
+    });
+  });
 </script>
 <style is:global>
 	:root {
-		/* --accent: 136, 58, 234;  */
 		--principal: #FEFFC5;
 		--principal-hover: #4C4C3F;
 		--white: #ffffff;
@@ -136,7 +150,7 @@ const { title, description } = Astro.props;
 	}
 	@media screen and (max-width:768px) {
 		:root{
-			--font-hero: 2.5rem;
+			--font-hero: 2rem;
 			--font-seccion: 2rem;
 		}
 		html{
