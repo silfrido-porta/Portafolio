@@ -3,21 +3,25 @@ const TECNOLOGIAS = [
   {
     title: "HTML",
     image: "../images/html.svg",
+    alternativo: "Icono de HTML",
     classPill: "pill pill-1",
   },
   {
     title: "CSS",
     image: "../images/css.svg",
+    alternativo: "Icono de CSS",
     classPill: "pill pill-2",
   },
   {
     title: "Javascript",
     image: "../images/js.svg",
+    alternativo: "Icono de Javascript",
     classPill: "pill pill-3",
   },
   {
     title: "Figma",
     image: "../images/figma.svg",
+    alternativo: "Icono de Figma",
     classPill: "pill pill-4",
   },
 ]
@@ -39,11 +43,11 @@ const TECNOLOGIAS = [
       </li>
     </ul>
     {
-      TECNOLOGIAS.map(({ image, title, classPill }) => ( 
+      TECNOLOGIAS.map(({ image, title, classPill, alternativo }) => ( 
         <p class={classPill}>
           {title}
           <span>
-            <img src={image} alt={title} loading="lazy" class="img-pill">
+            <img src={image} alt={alternativo} loading="lazy" class="img-pill">
           </span>
         </p>
       ))
