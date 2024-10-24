@@ -161,60 +161,71 @@ const { title, description } = Astro.props;
 			});
 		});
 
+		window.addEventListener("resize", function(e) {
+			checkScreenSize();
+		});
 
-		/*** Sticky Cursor with Delay */
-		// CURSOR
-		let cursor = document.querySelector(".cursor"),
-				follower = document.querySelector(".cursor-follower");
+    checkScreenSize();
 
-		let posX = 0,
-				posY = 0;
-
-		let mouseX = 0,
-				mouseY = 0;
-
-		gsap.to({}, {
-			duration: 0.016,
-			repeat: -1,
-			onRepeat: function() {
-				posX += (mouseX - posX) / 9;
-				posY += (mouseY - posY) / 9;
-
-				gsap.set(follower, {
-						css: {
-							left: posX - 30 + 'px',
-							top: posY - 30 + 'px'
-						}
+		function checkScreenSize() {
+      let newWindowWidth = window.innerWidth;
+      if (newWindowWidth > 768) {
+				/*** Sticky Cursor with Delay */
+				// CURSOR
+				let cursor = document.querySelector(".cursor"),
+						follower = document.querySelector(".cursor-follower");
+		
+				let posX = 0,
+						posY = 0;
+		
+				let mouseX = 0,
+						mouseY = 0;
+		
+				gsap.to({}, {
+					duration: 0.016,
+					repeat: -1,
+					onRepeat: function() {
+						posX += (mouseX - posX) / 9;
+						posY += (mouseY - posY) / 9;
+		
+						gsap.set(follower, {
+								css: {
+									left: posX - 30 + 'px',
+									top: posY - 30 + 'px'
+								}
+						});
+		
+						TweenMax.set(cursor, {
+								css: {
+									left: mouseX + 'px',
+									top: mouseY + 'px'
+								}
+						});
+					}
 				});
-
-				TweenMax.set(cursor, {
-						css: {
-							left: mouseX + 'px',
-							top: mouseY + 'px'
-						}
+		
+				document.querySelectorAll(".card-trabajo").forEach(function(container) {
+					container.addEventListener("mousemove", function(e) {
+						mouseX = e.clientX;
+						mouseY = e.clientY;
+					});
+		
+					// yellow circle
+					container.addEventListener("mouseenter", function() {
+						cursor.classList.add("active");
+						follower.classList.add("active");
+					});
+		
+					container.addEventListener("mouseleave", function() {
+						cursor.classList.remove("active");
+						follower.classList.remove("active");
+					});
 				});
+		
+				/*** Fin Sticky Cursor with Delay */
+
 			}
-		});
-
-		document.querySelectorAll(".card-trabajo").forEach(function(container) {
-			container.addEventListener("mousemove", function(e) {
-				mouseX = e.clientX;
-				mouseY = e.clientY;
-			});
-
-			// yellow circle
-			container.addEventListener("mouseenter", function() {
-				cursor.classList.add("active");
-				follower.classList.add("active");
-			});
-
-			container.addEventListener("mouseleave", function() {
-				cursor.classList.remove("active");
-				follower.classList.remove("active");
-			});
-		});
-
-		/*** Fin Sticky Cursor with Delay */
+		}
 
 	});
 
