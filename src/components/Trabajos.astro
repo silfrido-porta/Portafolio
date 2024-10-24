@@ -7,8 +7,7 @@ const PROJECTS = [
     description:
       "Universidad Columbia proporciona información detallada sobre sus carreras, servicios estudiantiles, y actividades institucionales. Además, permite acceder a servicios en línea como inscripciones y consultas.",
     link: "https://columbia.edu.py/",
-    imageOne: "../images/columbia-1.jpg",
-    imageTwo: "../images/columbia-1.jpg",
+    imageOne: "../images/columbia-1.webp",
   },
   {
     empresa: "Agencia Web Porta - 2023",
@@ -16,8 +15,7 @@ const PROJECTS = [
     description:
       "Mecal Muebles es una ecommerce que ofrece muebles de diseño moderno y funcional para diferentes espacios. El sitio destaca por su navegación intuitiva y diseño visual limpio.",
     link: "https://www.mecalmuebles.com.py/",
-    imageOne: "/images/mecal-1.jpg",
-    imageTwo: "/images/mecal-1.jpg",
+    imageOne: "/images/mecal-1.webp",
   },
   {
     empresa: "Proyecto Freelance - 2023",
@@ -25,8 +23,7 @@ const PROJECTS = [
     description:
       "El objetivo fue diseñar una interfaz divertida y atractiva, integrando juegos y premios. La web cumplía múltiples funciones, como el registro de cupones incluidos en los envases de jugos. Incorporaba un sistema de login/registro, perfil de usuario.",
     link: "https://www.figma.com/design/HDGxgM3yjZVUusxsz7x9fX/Trabajos-Terminados?node-id=0-1&t=ax2VrWXfIskh1ijI-1",
-    imageOne: "../images/puro-sol-1.jpg",
-    imageTwo: "../images/puro-sol-1.jpg",
+    imageOne: "../images/puro-sol-1.webp",
   },
   {
     empresa: "Agencia Web Porta - 2021",
@@ -34,8 +31,7 @@ const PROJECTS = [
     description:
       "Rediseño del catálogo web de PUMA Paraguay siguiendo la línea visual de las webs internacionales de la marca, manteniendo la coherencia con los estándares globales de PUMA y adaptando el diseño a las necesidades locales. ",
     link: "https://www.pumastore.com.py/",
-    imageOne: "/images/puma-1.jpg",
-    imageTwo: "/images/puma-1.jpg",
+    imageOne: "/images/puma-1.webp",
   },
 ]
 ---
@@ -47,7 +43,7 @@ const PROJECTS = [
     
     <div class="grid-trabajos">
       {
-        PROJECTS.map(({ imageOne, imageTwo, empresa, title, description, link }) => ( 
+        PROJECTS.map(({ imageOne, empresa, title, description, link }) => ( 
           <a href={link} target="_blank" class="card-trabajo">
             <div class="item-card-trabajo">
               <p class="date-card-trabajos">{empresa}</p>
@@ -57,10 +53,7 @@ const PROJECTS = [
                 
             </div>
             <div class="item-card-trabajo">
-              <picture>
-                <source srcset={imageTwo} media="(max-width: 768px)" />
-                <img src={imageOne} alt={title} loading="lazy" class="img-trabajos"/>
-              </picture>
+                <img src={imageOne} alt={title} loading="lazy" width="640" height="480" class="img-trabajos"/>
             </div>
           </a>
         ))

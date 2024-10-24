@@ -161,71 +161,75 @@ const { title, description } = Astro.props;
 			});
 		});
 
-		window.addEventListener("resize", function(e) {
-			checkScreenSize();
-		});
-
-    checkScreenSize();
+		
+		const desktopMediaQuery = window.matchMedia("(min-width: 768px)");
 
 		function checkScreenSize() {
-      let newWindowWidth = window.innerWidth;
-      if (newWindowWidth > 768) {
-				/*** Sticky Cursor with Delay */
-				// CURSOR
-				let cursor = document.querySelector(".cursor"),
-						follower = document.querySelector(".cursor-follower");
-		
-				let posX = 0,
-						posY = 0;
-		
-				let mouseX = 0,
-						mouseY = 0;
-		
-				gsap.to({}, {
-					duration: 0.016,
-					repeat: -1,
-					onRepeat: function() {
-						posX += (mouseX - posX) / 9;
-						posY += (mouseY - posY) / 9;
-		
-						gsap.set(follower, {
-								css: {
-									left: posX - 30 + 'px',
-									top: posY - 30 + 'px'
-								}
-						});
-		
-						TweenMax.set(cursor, {
-								css: {
-									left: mouseX + 'px',
-									top: mouseY + 'px'
-								}
-						});
-					}
-				});
-		
-				document.querySelectorAll(".card-trabajo").forEach(function(container) {
-					container.addEventListener("mousemove", function(e) {
-						mouseX = e.clientX;
-						mouseY = e.clientY;
-					});
-		
-					// yellow circle
-					container.addEventListener("mouseenter", function() {
-						cursor.classList.add("active");
-						follower.classList.add("active");
-					});
-		
-					container.addEventListener("mouseleave", function() {
-						cursor.classList.remove("active");
-						follower.classList.remove("active");
-					});
-				});
-		
-				/*** Fin Sticky Cursor with Delay */
-
+			if (!desktopMediaQuery.matches) {
+					// Si la pantalla es menor a 768px, detener la ejecución
+					return;
 			}
+    
+    	/*** Sticky Cursor with Delay */
+    	let cursor = document.querySelector(".cursor"),
+        follower = document.querySelector(".cursor-follower");
+
+    	let posX = 0, posY = 0;
+    	let mouseX = 0, mouseY = 0;
+
+    	gsap.to({}, {
+        duration: 0.016,
+        repeat: -1,
+        onRepeat: function() {
+            posX += (mouseX - posX) / 9;
+            posY += (mouseY - posY) / 9;
+
+            gsap.set(follower, {
+                css: {
+                    left: posX - 30 + 'px',
+                    top: posY - 30 + 'px'
+                }
+            });
+
+            TweenMax.set(cursor, {
+                css: {
+                    left: mouseX + 'px',
+                    top: mouseY + 'px'
+                }
+            });
+        }
+    	});
+
+    	document.querySelectorAll(".card-trabajo").forEach(function(container) {
+        container.addEventListener("mousemove", function(e) {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // yellow circle
+        container.addEventListener("mouseenter", function() {
+            cursor.classList.add("active");
+            follower.classList.add("active");
+        });
+
+        container.addEventListener("mouseleave", function() {
+            cursor.classList.remove("active");
+            follower.classList.remove("active");
+        });
+    	});
+    	/*** Fin Sticky Cursor with Delay */
 		}
+
+		// Verifica inicialmente el tamaño de la pantalla
+		checkScreenSize();
+
+		// Escucha los cambios en el tamaño de la pantalla
+		desktopMediaQuery.addEventListener("change", (event) => {
+    	if (event.matches) {
+        // Solo ejecuta cuando la pantalla sea mayor a 768px
+        checkScreenSize();
+    	}
+		});
 
 	});
 
