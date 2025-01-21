@@ -11,8 +11,34 @@
     </div>
     <div class="body-card-experiencia">
 
-      <p class="text-card-experiencia">Diseñador Web y Frontend</p>
-      <p class="text-card-experiencia">Mis principales tareas son el diseño, desarrollo y mantenimiento de landings, ecommerces, plantillas para correos y dashboards, siempre considerando tanto la versión móvil como la de escritorio. Además, lidero la construcción, desarrollo y optimización de los ecommerces de varias empresas.</p>
+      <p class="text-card-experiencia mb-1">Diseñador Web y Frontend</p>
+      <ul class="list-card-experiencia">
+        <li class="text-card-experiencia">Diseño y desarrollo de landings pages, ecommerces y dashboards responsivas y centradas en la experiencia del usuario.</li>
+        <li class="text-card-experiencia">Creación de plantillas de correos.</li>
+        <li class="text-card-experiencia">Implementación de estrategias de optimización de rendimiento en ecommerces, mejorando la velocidad de carga y la experiencia móvil.</li>
+        <li class="text-card-experiencia">Mantenimiento y actualizaciones.</li>
+      </ul>
+      <!-- <p class="text-card-experiencia">Mis principales tareas son el diseño, desarrollo y mantenimiento de landings, ecommerces, plantillas para correos y dashboards, siempre considerando tanto la versión móvil como la de escritorio. Además, lidero la construcción, desarrollo y optimización de los ecommerces de varias empresas.</p> -->
+    </div>
+  </article>
+
+  <article class="card-experiencia mb-0">
+    <div class="head-card-experiencia">
+      <h3 class="title-card-experiencia">
+        <a href="#" target="_blank">
+          Freelance - Puro Sol
+        </a>
+      </h3>
+      <p class="date-card-experiencia">Agosto 2023</p>
+    </div>
+    <div class="body-card-experiencia">
+
+      <p class="text-card-experiencia mb-1">Diseñador UX/UI y Frontend</p>
+      <ul class="list-card-experiencia">
+        <li class="text-card-experiencia">Creación de Wireframes, Mockups, Prototipos interactivos.</li>
+        <li class="text-card-experiencia">Desarrollo de diseños responsivos optimizados para dispositivos móviles y escritorio.</li>
+        <li class="text-card-experiencia">Creación de sistemas de diseño organizados que agilizan el desarrollo y mantienen la consistencia visual.</li>
+      </ul>
     </div>
   </article>
 </section>
@@ -64,6 +90,12 @@
     z-index: 2;
   }
   /* Card */
+  .card-experiencia{
+    margin-bottom: 4rem;
+  }
+  .card-experiencia.mb-0{
+    margin-bottom: 0;
+  }
   .head-card-experiencia{
     display: grid;
     display: grid;
@@ -98,8 +130,14 @@
     position: relative;
     z-index: 2;
   }
+  .list-card-experiencia{
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+    padding-left: 1rem;
+  }
   .text-card-experiencia{
-    font-size: 1rem;
+    font-size: .875rem;
     color: var(--principal);
     line-height: 1.5rem;
     letter-spacing: 0.02rem;
@@ -136,8 +174,8 @@
       font-size: .8rem;
       letter-spacing: 0.02rem;
     }
-    .text-card-experiencia:nth-child(1){
-      margin-bottom: 2rem;
+    .text-card-experiencia.mb-1{
+      margin-bottom: 1rem;
     }
     .seccion-experiencia::before{
       width: 60px;
