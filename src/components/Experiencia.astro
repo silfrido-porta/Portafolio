@@ -43,6 +43,22 @@
   </article>
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '80px',
+      duration: 2000,
+      reset: false
+    });
+
+    sr.reveal('.card-experiencia', {
+      delay: 200,
+      interval: 200
+    })
+  });
+</script>
+
 <style>
   .seccion-experiencia{
     max-width: 1500px;
@@ -118,7 +134,7 @@
   }
 
   .date-card-experiencia{
-    font-size: .875rem;
+    font-size: 1rem;
     color: var(--principal);
     margin-bottom: 0;
   }
@@ -137,7 +153,7 @@
     padding-left: 1rem;
   }
   .text-card-experiencia{
-    font-size: .875rem;
+    font-size: 1rem;
     color: var(--principal);
     line-height: 1.5rem;
     letter-spacing: 0.02rem;
@@ -171,7 +187,7 @@
       margin-bottom: 1rem;
     }
     .date-card-experiencia{
-      font-size: .8rem;
+      font-size: 1rem;
       letter-spacing: 0.02rem;
     }
     .text-card-experiencia.mb-1{

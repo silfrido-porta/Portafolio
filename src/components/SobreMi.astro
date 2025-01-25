@@ -10,13 +10,34 @@
     </div>
     <div class="item-sobremi">
       <div class="wrapper-text-sobremi">
-        <h2 class="title-sombremi">Sobre mí</h2>
-        <p class="text-card-sombremi">Me llamo Silfrido Benítez y actualmente trabajo como diseñador Web en Porta Agencia Web. Tengo experiencia en el diseño, desarrollo y mantenimiento de interfaces web. Tengo sólidos conocimientos en HTML semántico, CSS y optimización para mejorar el rendimiento, así como experiencia con una variedad de frameworks y bibliotecas frontend.</p>
-        <p class="text-card-sombremi">Como diseñador, he trabajado con diversas marcas de distintos sectores, lo que me ha permitido experimentar con tendencias o adoptar un enfoque más serio según los requerimientos de cada marca.</p>
+        <h2 class="title-sombremi load-hidden">Sobre mí</h2>
+        <p class="text-card-sombremi load-hidden">Me llamo Silfrido Benítez, soy diseñador web en Porta Agencia Web, especializado en la creación y mantenimiento de interfaces web optimizadas. Tengo sólidos conocimientos en HTML semántico, CSS, JavaScript y frameworks frontend. Uso diariamente herramientas como Figma, Photoshop e Illustrator, adaptándome a las necesidades y estilos de cada marca con la que trabajo.</p>
+
+        <p class="text-card-sombremi load-hidden">Como diseñador, he trabajado con diversas marcas de distintos sectores, lo que me ha permitido experimentar con tendencias o adoptar un enfoque más serio según los requerimientos de cada marca.</p>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '80px',
+      duration: 2000,
+      reset: false
+    });
+
+    sr.reveal('.title-sombremi', {
+      delay: 200,
+      interval: 200
+    })
+    sr.reveal('.text-card-sombremi', {
+      delay: 250,
+      interval: 250
+    })
+  });
+</script>
 
 <style>
   .seccion-sombremi{

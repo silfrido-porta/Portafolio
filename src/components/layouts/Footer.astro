@@ -1,11 +1,15 @@
 <footer class="footer">
   <div class="wrapper-footer" id="contacto">
     <div class="call-to-action-footer">
-      <h2 class="title-footer">¿Listo para dar vida a tus ideas?</h2>
-      <p class="text-footer">Puedo impulsar tu proyecto o formar parte de tu equipo.</p>
-      <a href="mailto:silfridobenitez65@gmail.com" target="_blank" class="btn btn-primary">
-        ¿Hablamos?
-      </a>
+      <h2 class="title-footer">Convierte tus ideas en realidad</h2>
+      <p class="text-footer">¿Listo para dar vida a tus ideas?</p>
+      <ul class="list-call-footer">
+        <li>
+          <a href="mailto:silfridobenitez65@gmail.com" target="_blank" class="btn btn-primary">
+            ¿Hablamos?
+          </a>
+        </li>
+      </ul>
     </div>
 
     <div class="grid-redes">
@@ -33,8 +37,32 @@
     </div>
 
   </div>
-
 </footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '80px',
+      duration: 2000,
+      reset: false
+    });
+
+    sr.reveal('.title-footer', {
+      delay: 200,
+      interval: 200
+    })
+    sr.reveal('.text-footer', {
+      delay: 250,
+      interval: 250
+    })
+    sr.reveal('.list-call-footer', {
+      delay: 300,
+      interval: 300
+    })
+  });
+</script>
+
 <style>
   .footer{
     background-color: var(--fondo);
@@ -52,6 +80,14 @@
     max-width: 1500px;
 		width: 90%;
 		margin: 0 auto;
+  }
+  .list-call-footer{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 0;
   }
   .call-to-action-footer{
     display: flex;
@@ -85,7 +121,7 @@
     padding-top: 1rem;
   }
   .text-redes{
-    font-size: 1rem;
+    font-size: .85rem;
     font-weight: 400;
     line-height: 1.5;
     text-align: center;
@@ -101,7 +137,7 @@
     margin-bottom: 0;
   }
   .list-footer li{
-    font-size: 1rem;
+    font-size: .85rem;
     color: var(--principal);
     line-height: 24px;
     letter-spacing: 0.02rem;

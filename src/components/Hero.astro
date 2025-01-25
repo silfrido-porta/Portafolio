@@ -28,9 +28,9 @@ const TECNOLOGIAS = [
 ---
 <section class="seccion-hero">
   <div class="wrapper-hero">
-    <h1 class="title-hero">Diseño interfaces intuitivas, eficientes y versátiles.</h1>
-    <p class="text-hero">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
-    <ul class="list-hero">
+    <h1 class="title-hero load-hidden">Diseño interfaces intuitivas, eficientes y versátiles.</h1>
+    <p class="text-hero load-hidden">Más de 4 años de experiencia como desarrollador creativo, me centro tanto en el diseño como en el desarrollo, lo que me permite trabajar en proyectos desde el concepto hasta el momento de la publicación.</p>
+    <ul class="list-hero load-hidden">
       <li>
         <a href="mailto:silfridobenitez65@gmail.com" target="_blank" class="btn btn-primary">
           ¿Hablamos?
@@ -58,6 +58,29 @@ const TECNOLOGIAS = [
 
 </section>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const sr = ScrollReveal({
+      origin: 'bottom',
+      distance: '80px',
+      duration: 2000,
+      reset: false
+    });
+
+    sr.reveal('.title-hero', {
+      delay: 200,
+      interval: 200
+    })
+    sr.reveal('.text-hero', {
+      delay: 250,
+      interval: 250
+    })
+    sr.reveal('.list-hero', {
+      delay: 300,
+      interval: 300
+    })
+  });
+</script>
 
 <style>
   .seccion-hero{
