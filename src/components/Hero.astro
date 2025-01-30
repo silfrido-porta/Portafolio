@@ -85,14 +85,26 @@ const TECNOLOGIAS = [
 <style>
   .seccion-hero{
     background-color: var(--fondo);
-    background-image: url(/images/grid.svg);
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
     padding-top: 12rem;
     padding-bottom: 10rem;
     border-bottom-left-radius: var(--border-radius);
     border-bottom-right-radius: var(--border-radius);
+    position: relative;
+  }
+  .seccion-hero:after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    width: 100%;
+    background-image: url(/images/grid.svg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: .4;
   }
   .wrapper-hero{
     max-width: 836px;
@@ -102,6 +114,7 @@ const TECNOLOGIAS = [
     align-items: center;
     flex-direction: column;
     position: relative;
+    z-index: 2;
   }
   .title-hero{
     font-size: var(--font-hero);
