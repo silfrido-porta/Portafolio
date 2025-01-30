@@ -316,7 +316,6 @@ const PROJECTS = [
     }
     .text-card-trabajos{
       width: 100%;
-      display: none;
     }
     .wrapper-trabajos::after{
       width: 60px;
@@ -324,7 +323,30 @@ const PROJECTS = [
       right: 0;
     }
     .link-card-experiencia{
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      width: 100%;
+      padding: .75rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      background: var(--principal);
+      color: var(--black);
+      text-decoration: none;
+      margin-top: 2rem;
+      margin-bottom: 0;
+      transition: all .3s;
     }
+    .link-card-experiencia:hover{
+      border: 1px solid var(--principal);
+      background: var(--secundario);
+      color: var(--black);
+    }
+    .link-card-experiencia::before,
+    .link-card-experiencia::after{
+      display: none;
+    }
+
   }
 </style>
